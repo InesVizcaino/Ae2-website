@@ -1,55 +1,36 @@
 <!DOCTYPE html>
-<html></html>
+<html>
   <head>
     <title>Las lobas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossoring="anonymous">
     <style>
-      h1{
-        font-size: 60px;
-        font-family: Roboto;
-        font-weight: normal; 
-        color: purple;
-        text-align: center;
-      }
-
       #portada {
-        width: 100%;
         height: 360px;
-        object-fit: cover;
+        width: 100%;
+        object-fit:cover;
       }
-
-      h2 {
-        font-family:Roboto;
-        font-size:32px;
-        color:purple;
-        text-align: center;
-        font-weight: normal;
-      }
-
-      .bodytext {
-        font-family: Roboto;
-        color: rgb(80, 80, 80);
-      }
-
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-
-      
-    </style>
+  </style>
   </head>
   <body>
-    <div id="container"> 
-      <h1>Peace shop</h1>
-      <img id="portada" src="https://ae2-website.maria-inesi.repl.co/static/portada.jpg"  >
-      <h2>About our shop:</h2>
-      <p class="bodytext">
+    <div class="container"> 
+      <h1 class="text-center mt-2 mb-4">
+      {{paceshop}} Peace shop
+    </h1>
+      <img class= "img-fluid" id="portada" src="https://ae2-website.maria-inesi.repl.co/static/portada.jpg">
+      <h2 class="text-center mt-2 mb-4">About Our Shop:</h2>
+      <p class="lead">
         Peace shop, we believe in the power of music to touch the soul and enrich our lives! We are a music store passionate about providing our customers with a wide variety of musical instruments, accessories, sound equipment, and educational resources. Whether you are an experienced musician or just starting to explore the world of music, we are here to assist you in every step of your musical journey.
       </p>
-      <h2 class="text-center mt-2 md-4">Open Positions</h2>
-      <p >Job Titles: Music</p>
+      <h2 class="text center mt-2 mb-4">Open Positions</h2>
+    <div>
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}
+    </div>
     <div class="text-center">
-      <bottom class="btn btn-primary btn-lg">Contact Us</bottom>
+    <button class="btn btn-primary btn-lg mt-4">Contact Us</button>
       <p class="mt-4">Copyright 2023, Las lobas</p>
      </div>
    </div>
